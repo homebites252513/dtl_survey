@@ -98,3 +98,6 @@ button:hover {
     padding: 15px;
   }
 }
+.step {
+  display: none;
+}
