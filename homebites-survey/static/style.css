@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* BACKGROUND */
+/* BODY */
 body {
   background: #020805;
   color: #fff;
@@ -26,7 +26,7 @@ body {
   z-index: -1;
 }
 
-/* CONTAINER */
+/* MAIN CONTAINER */
 .container {
   width: 100%;
   max-width: 420px;
@@ -42,7 +42,7 @@ h1 {
   color: #00ff8c;
 }
 
-/* CARD (INTRO + FORM) */
+/* CARD */
 .card, form {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
@@ -52,18 +52,25 @@ h1 {
   backdrop-filter: blur(10px);
 }
 
-/* STEP CONTROL */
+/* INTRO TEXT */
+#intro p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+
+/* STEPS */
 .step {
   display: none;
 }
 
-/* QUESTION TEXT */
+/* QUESTION */
 h2 {
   font-size: 17px;
   margin-bottom: 15px;
 }
 
-/* OPTIONS CONTAINER */
+/* OPTIONS */
 .options {
   display: flex;
   flex-direction: column;
@@ -82,13 +89,13 @@ h2 {
   transition: 0.2s ease;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .opt:hover {
   transform: translateY(-2px);
   border-color: rgba(0,255,140,0.4);
 }
 
-/* ACTIVE OPTION */
+/* ACTIVE */
 .opt.active {
   background: linear-gradient(90deg, #00ff8c, #00c26b);
   color: #042016;
@@ -96,7 +103,7 @@ h2 {
   box-shadow: 0 0 20px rgba(0,255,140,0.4);
 }
 
-/* NAV BUTTONS */
+/* NAVIGATION */
 .nav {
   margin-top: 20px;
   display: flex;
@@ -104,7 +111,12 @@ h2 {
   gap: 10px;
 }
 
-/* BUTTON STYLE */
+/* HIDE NAV ON LOAD (IMPORTANT) */
+#surveyForm .nav {
+  display: none;
+}
+
+/* BUTTONS */
 button {
   padding: 10px 16px;
   border-radius: 10px;
@@ -128,13 +140,6 @@ button {
 button:hover {
   transform: translateY(-1px);
   box-shadow: 0 0 10px rgba(0,255,140,0.4);
-}
-
-/* INTRO TEXT */
-#intro p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.85);
 }
 
 /* MOBILE */
