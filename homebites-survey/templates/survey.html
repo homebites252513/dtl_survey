@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Campus Survey</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+
+<body>
+<div class="bg-glow"></div>
+
+<div class="container">
+
+  <!-- BRAND -->
+  <div class="brand">
+    <div class="logo">⚡</div>
+    <h1>Smart Campus Survey</h1>
+    <p class="tag">Air Quality × Energy Optimization 🌬️</p>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+
+    <!-- PROGRESS -->
+    <div class="progress">
+      <div class="bar" id="bar"></div>
+    </div>
+
+    <form id="surveyForm">
+
+      <!-- 1 -->
+      <div class="step active">
+        <h2>Ever felt classrooms are too hot or suffocating? 👀</h2>
+        <select name="comfort" required>
+          <option value="">Be honest…</option>
+          <option>Amazing (feels like hill station 🌿)</option>
+          <option>Pretty good 👍</option>
+          <option>Meh 😐</option>
+          <option>Bad (where is oxygen?? 😵)</option>
+        </select>
+      </div>
+
+      <!-- 2 -->
+      <div class="step">
+        <h2>How often does the room feel like a sealed box? 🌬️</h2>
+        <select name="ventilation">
+          <option>Never (fresh air gang 🌬️)</option>
+          <option>Rarely</option>
+          <option>Sometimes 👀</option>
+          <option>Often (window kholo pls 😭)</option>
+        </select>
+      </div>
+
+      <!-- 3 -->
+      <div class="step">
+        <h2>Do you feel uncomfortable due to heat/smell/no airflow? 🥵</h2>
+        <select name="discomfort">
+          <option>Never 💪</option>
+          <option>Rarely</option>
+          <option>Sometimes 👀</option>
+          <option>Frequently 😭</option>
+        </select>
+      </div>
+
+      <!-- 4 -->
+      <div class="step">
+        <h2>How does classroom temperature feel? ❄️</h2>
+        <select name="temperature">
+          <option>Perfect 😌</option>
+          <option>Slightly off</option>
+          <option>Often uncomfortable 😤</option>
+          <option>Very uncomfortable 😭</option>
+        </select>
+      </div>
+
+      <!-- 5 -->
+      <div class="step">
+        <h2>What’s the biggest issue? 🤔</h2>
+        <div class="checklist">
+          <label><input type="checkbox" name="issues" value="Too hot"><span>Too hot 🔥</span></label>
+          <label><input type="checkbox" name="issues" value="Too cold"><span>Too cold ❄️</span></label>
+          <label><input type="checkbox" name="issues" value="Poor airflow"><span>Poor airflow ⏳</span></label>
+          <label><input type="checkbox" name="issues" value="No issues"><span>No issues 😌</span></label>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="step">
+        <h2>Do you think electricity is wasted on campus? ⚡</h2>
+        <select name="waste">
+          <option>Never 👌</option>
+          <option>Rarely</option>
+          <option>Sometimes 👀</option>
+          <option>Frequently 😭</option>
+        </select>
+      </div>
+
+      <!-- 7 -->
+      <div class="step">
+        <h2>When do you notice wastage the most? 🔌</h2>
+        <div class="checklist">
+          <label><input type="checkbox" name="waste_where" value="Lights"><span>Empty rooms with lights ON 💡</span></label>
+          <label><input type="checkbox" name="waste_where" value="AC"><span>AC/fans running ❄️</span></label>
+          <label><input type="checkbox" name="waste_where" value="Equipment"><span>Equipment left ON 🖥️</span></label>
+          <label><input type="checkbox" name="waste_where" value="Not sure"><span>Not sure 😎</span></label>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="step">
+        <h2>Are you okay with automatic control? 🤖</h2>
+        <select name="automation">
+          <option>Yes, fully automatic 🤖</option>
+          <option>Yes, but with control 😌</option>
+          <option>Not sure 👀</option>
+          <option>No 💪</option>
+        </select>
+      </div>
+
+      <!-- 9 -->
+      <div class="step">
+        <h2>How often are classrooms empty but everything is ON? 👀</h2>
+        <select name="empty_usage">
+          <option>Never</option>
+          <option>Rarely</option>
+          <option>Sometimes</option>
+          <option>Often 😭</option>
+        </select>
+      </div>
+
+      <!-- 10 -->
+      <div class="step">
+        <h2>Would you like to see real-time data? 📊</h2>
+        <select name="data">
+          <option>Yes 🤓</option>
+          <option>Maybe 👀</option>
+          <option>No 😐</option>
+        </select>
+      </div>
+
+      <!-- 11 -->
+      <div class="step">
+        <h2>What do you prefer? 💡</h2>
+        <select name="priority">
+          <option>Maximum comfort 😌</option>
+          <option>Balance ⚖️</option>
+          <option>Maximum saving 🌍</option>
+          <option>No preference 😎</option>
+        </select>
+      </div>
+
+      <!-- 12 -->
+      <div class="step">
+        <h2>Rate this idea 👇</h2>
+        <p style="margin-bottom:10px;color:rgba(255,255,255,0.7);font-size:13px;">
+          Smart system that adjusts energy based on air quality ⚡🌬️
+        </p>
+
+        <input type="range" name="rating" min="0" max="10" value="8"
+        oninput="document.getElementById('scoreVal').innerText=this.value">
+
+        <div class="rangeVal"><span id="scoreVal">8</span>/10</div>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="btns">
+        <button type="button" id="prevBtn" class="secondary">Back</button>
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="footer">
+    Takes 30 seconds ⚡
+  </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
