@@ -1,12 +1,9 @@
 let current = -1;
-
 const steps = document.querySelectorAll(".step");
 const intro = document.getElementById("intro");
 const form = document.getElementById("surveyForm");
 
-window.onload = () => {
-  steps.forEach(s => s.style.display = "none");
-};
+let answers = {};
 
 function startSurvey() {
   intro.style.display = "none";
@@ -16,13 +13,22 @@ function startSurvey() {
 }
 
 function showStep(i) {
-  steps.forEach((s, index) => {
-    s.style.display = index === i ? "block" : "none";
+  steps.forEach((s, idx) => {
+    s.style.display = idx === i ? "block" : "none";
   });
-
-  document.getElementById("nextBtn").innerText =
-    i === steps.length - 1 ? "Submit" : "Next";
 }
+
+document.querySelectorAll(".opt").forEach(opt => {
+  opt.onclick = () => {
+    const parent = opt.parentElement;
+    const name = parent.dataset.name;
+
+    parent.querySelectorAll(".opt").forEach(o => o.classList.remove("active"));
+    opt.classList.add("active");
+
+    answers[name] = opt.innerText;
+  };
+});
 
 function nextStep() {
   if (current < steps.length - 1) {
@@ -41,16 +47,17 @@ function prevStep() {
 }
 
 async function submitForm() {
-  const formData = new FormData(form);
+  const formData = new FormData();
 
-  await fetch(
-    "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse",
-    {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    }
-  );
+  for (let key in answers) {
+    formData.append(key, answers[key]);
+  }
+
+  await fetch("https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse", {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  });
 
   alert("Submitted 🚀");
 }
