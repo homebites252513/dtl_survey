@@ -1,23 +1,100 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND */
 body {
-  background: #050a07;
+  background: radial-gradient(circle at top, #06120c, #020805);
   color: white;
-  font-family: Arial;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* MAIN CARD */
 .container {
-  width: 320px;
-  margin: auto;
-  margin-top: 40px;
-}
-
-select, button {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  max-width: 420px;
+  padding: 20px;
 }
 
+/* TITLE */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #00ff9c;
+}
+
+/* INTRO BOX */
+#intro {
+  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 25px rgba(0,255,140,0.15);
+  line-height: 1.5;
+}
+
+/* FORM CARD */
+form {
+  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 25px rgba(0,255,140,0.15);
+}
+
+/* LABEL */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #aaffd6;
+}
+
+/* INPUTS */
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.35);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+/* BUTTON */
 button {
-  background: #00ff8c;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 14px;
   border: none;
   font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00ff9c, #00c972);
+  color: #042016;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0,255,140,0.5);
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+  .container {
+    padding: 15px;
+  }
 }
