@@ -1,36 +1,62 @@
 let current = -1;
+
 const steps = document.querySelectorAll(".step");
 const intro = document.getElementById("intro");
 const form = document.getElementById("surveyForm");
+const nav = document.querySelector(".nav");
 
 let answers = {};
 
+/* START SURVEY */
 function startSurvey() {
   intro.style.display = "none";
   form.style.display = "block";
+
+  // SHOW BUTTONS
+  nav.style.display = "flex";
+
   current = 0;
   showStep(current);
 }
 
+/* SHOW STEP */
 function showStep(i) {
-  steps.forEach((s, idx) => {
-    s.style.display = idx === i ? "block" : "none";
+  steps.forEach((step, index) => {
+    step.style.display = index === i ? "block" : "none";
   });
 }
 
-document.querySelectorAll(".opt").forEach(opt => {
-  opt.onclick = () => {
-    const parent = opt.parentElement;
-    const name = parent.dataset.name;
+/* OPTION CLICK */
+document.querySelectorAll(".options").forEach(group => {
+  const name = group.getAttribute("data-name");
 
-    parent.querySelectorAll(".opt").forEach(o => o.classList.remove("active"));
-    opt.classList.add("active");
+  group.querySelectorAll(".opt").forEach(option => {
+    option.addEventListener("click", () => {
 
-    answers[name] = opt.innerText;
-  };
+      // remove previous selection
+      group.querySelectorAll(".opt").forEach(o => o.classList.remove("active"));
+
+      // mark selected
+      option.classList.add("active");
+
+      // store answer
+      answers[name] = option.innerText;
+    });
+  });
 });
 
+/* NEXT */
 function nextStep() {
+
+  // force selection before moving
+  const currentStep = steps[current];
+  const selected = currentStep.querySelector(".opt.active");
+
+  if (!selected) {
+    alert("Select an option 😤");
+    return;
+  }
+
   if (current < steps.length - 1) {
     current++;
     showStep(current);
@@ -39,6 +65,7 @@ function nextStep() {
   }
 }
 
+/* BACK */
 function prevStep() {
   if (current > 0) {
     current--;
@@ -46,18 +73,23 @@ function prevStep() {
   }
 }
 
-async function submitForm() {
+/* SUBMIT TO GOOGLE FORM */
+function submitForm() {
+
+  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse";
+
   const formData = new FormData();
 
   for (let key in answers) {
     formData.append(key, answers[key]);
   }
 
-  await fetch("https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse", {
+  fetch(formURL, {
     method: "POST",
-    mode: "no-cors",
-    body: formData
+    body: formData,
+    mode: "no-cors"
   });
 
-  alert("Submitted 🚀");
+  alert("Submitted ✅");
+  location.reload();
 }
