@@ -76,20 +76,17 @@ function prevStep() {
 /* SUBMIT TO GOOGLE FORM */
 function submitForm() {
 
-  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse";
+  let baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse?";
 
-  const formData = new FormData();
+  let params = [];
 
   for (let key in answers) {
-    formData.append(key, answers[key]);
+    let value = encodeURIComponent(answers[key]);
+    params.push(`${key}=${value}`);
   }
 
-  fetch(formURL, {
-    method: "POST",
-    body: formData,
-    mode: "no-cors"
-  });
+  let finalURL = baseURL + params.join("&");
 
-  alert("Submitted ✅");
-  location.reload();
+  // 🔥 THIS LINE ACTUALLY SUBMITS TO GOOGLE FORM
+  window.location.href = finalURL;
 }
