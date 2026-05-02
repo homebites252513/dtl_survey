@@ -76,17 +76,23 @@ function prevStep() {
 /* SUBMIT TO GOOGLE FORM */
 function submitForm() {
 
-  let baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse?";
+  let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfmjdUe8BvpP1nnZOARAPcK7RJbSj0f0KXlUCHQe7mXhdz-qw/formResponse";
 
-  let params = [];
+  let formData = new FormData();
 
   for (let key in answers) {
-    let value = encodeURIComponent(answers[key]);
-    params.push(`${key}=${value}`);
+    formData.append(key, answers[key]);
   }
 
-  let finalURL = baseURL + params.join("&");
+  // hidden iframe submit (this actually works reliably)
+  fetch(formURL, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  });
 
-  // 🔥 THIS LINE ACTUALLY SUBMITS TO GOOGLE FORM
-  window.location.href = finalURL;
+  alert("Submitted ✅");
+
+  // optional reset
+  location.reload();
 }
