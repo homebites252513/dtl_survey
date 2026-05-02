@@ -8,11 +8,10 @@
 <body>
 
 <div class="container">
-
   <h1>DTL SURVEY ⚡</h1>
 
-  <!-- INTRO SCREEN -->
-  <div id="intro">
+  <!-- INTRO -->
+  <div id="intro" class="card">
     <p>
       <b>Got you 👀</b><br><br>
 
@@ -21,12 +20,12 @@
       This is actually our project where we’re trying to understand and improve classroom comfort 
       (temperature, air quality, and energy usage).<br><br>
 
-      Your responses will help us design a smarter system for better classrooms on campus.<br><br>
+      Your responses will help us design a smarter system.<br><br>
 
       👉 Takes less than 30 seconds<br>
       👉 No personal data collected<br><br>
 
-      Thanks for helping us build something useful 🙌
+      Thanks 🙌
     </p>
 
     <button onclick="startSurvey()">Start</button>
@@ -35,74 +34,110 @@
   <!-- FORM -->
   <form id="surveyForm" style="display:none;">
 
-    <label>Air Quality</label>
-    <select name="entry.167936367">
-      <option>Amazing</option><option>Good</option><option>Okay</option><option>Bad</option>
-    </select>
+    <div class="step">
+      <h2>Air Quality</h2>
+      <select name="entry.167936367" required>
+        <option value="">Select</option>
+        <option>Amazing</option><option>Good</option><option>Okay</option><option>Bad</option>
+      </select>
+    </div>
 
-    <label>Ventilation</label>
-    <select name="entry.1814503071">
-      <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
-    </select>
+    <div class="step">
+      <h2>Ventilation</h2>
+      <select name="entry.1814503071" required>
+        <option value="">Select</option>
+        <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
+      </select>
+    </div>
 
-    <label>Discomfort</label>
-    <select name="entry.1512901872">
-      <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Frequently</option>
-    </select>
+    <div class="step">
+      <h2>Discomfort</h2>
+      <select name="entry.1512901872" required>
+        <option value="">Select</option>
+        <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Frequently</option>
+      </select>
+    </div>
 
-    <label>Temperature</label>
-    <select name="entry.1106749226">
-      <option>Perfect</option><option>Okay</option><option>Bad</option><option>Very bad</option>
-    </select>
+    <div class="step">
+      <h2>Temperature</h2>
+      <select name="entry.1106749226" required>
+        <option value="">Select</option>
+        <option>Perfect</option><option>Okay</option><option>Bad</option><option>Very bad</option>
+      </select>
+    </div>
 
-    <label>Main Issue</label>
-    <select name="entry.1881675444">
-      <option>Too hot</option><option>Too cold</option><option>Airflow</option><option>No issue</option>
-    </select>
+    <div class="step">
+      <h2>Main Issue</h2>
+      <select name="entry.1881675444" required>
+        <option value="">Select</option>
+        <option>Too hot</option><option>Too cold</option><option>Airflow</option><option>No issue</option>
+      </select>
+    </div>
 
-    <label>Energy Waste</label>
-    <select name="entry.1903300658">
-      <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
-    </select>
+    <div class="step">
+      <h2>Energy Waste</h2>
+      <select name="entry.1903300658" required>
+        <option value="">Select</option>
+        <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
+      </select>
+    </div>
 
-    <label>Where Waste?</label>
-    <select name="entry.1493350363">
-      <option>Lights</option><option>AC/Fans</option><option>Equipment</option><option>Not sure</option>
-    </select>
+    <div class="step">
+      <h2>Where Waste?</h2>
+      <select name="entry.1493350363" required>
+        <option value="">Select</option>
+        <option>Lights</option><option>AC/Fans</option><option>Equipment</option><option>Not sure</option>
+      </select>
+    </div>
 
-    <label>Automation</label>
-    <select name="entry.274706038">
-      <option>Yes</option><option>Maybe</option><option>No</option>
-    </select>
+    <div class="step">
+      <h2>Automation</h2>
+      <select name="entry.274706038" required>
+        <option value="">Select</option>
+        <option>Yes</option><option>Maybe</option><option>No</option>
+      </select>
+    </div>
 
-    <label>Control</label>
-    <select name="entry.1862869146">
-      <option>Automatic</option><option>Mixed</option><option>Manual</option>
-    </select>
+    <div class="step">
+      <h2>Control</h2>
+      <select name="entry.1862869146" required>
+        <option value="">Select</option>
+        <option>Automatic</option><option>Mixed</option><option>Manual</option>
+      </select>
+    </div>
 
-    <label>Empty Usage</label>
-    <select name="entry.983563478">
-      <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
-    </select>
+    <div class="step">
+      <h2>Empty Usage</h2>
+      <select name="entry.983563478" required>
+        <option value="">Select</option>
+        <option>Never</option><option>Rarely</option><option>Sometimes</option><option>Often</option>
+      </select>
+    </div>
 
-    <label>Data Visibility</label>
-    <select name="entry.60962046">
-      <option>Yes</option><option>Maybe</option><option>No</option>
-    </select>
+    <div class="step">
+      <h2>Data Visibility</h2>
+      <select name="entry.60962046" required>
+        <option value="">Select</option>
+        <option>Yes</option><option>Maybe</option><option>No</option>
+      </select>
+    </div>
 
-    <label>Preference</label>
-    <select name="entry.346856527">
-      <option>Comfort</option><option>Balanced</option><option>Saving</option>
-    </select>
+    <div class="step">
+      <h2>Preference</h2>
+      <select name="entry.346856527" required>
+        <option value="">Select</option>
+        <option>Comfort</option><option>Balanced</option><option>Saving</option>
+      </select>
+    </div>
 
-    <br><br>
-    <button type="submit">Submit</button>
+    <div class="nav">
+      <button type="button" onclick="prevStep()">Back</button>
+      <button type="button" onclick="nextStep()" id="nextBtn">Next</button>
+    </div>
 
   </form>
-
 </div>
 
 <script src="/static/script.js"></script>
-
 </body>
 </html>
