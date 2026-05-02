@@ -10,147 +10,160 @@
 <div class="bg"></div>
 
 <div class="container">
-
   <h1>DTL SURVEY ⚡</h1>
 
   <!-- INTRO -->
-  <div id="intro" class="card">
+  <div id="intro" class="card active">
     <p>
       <b>Got you 👀</b><br><br>
-
       Relax — no official changes yet 😄<br><br>
-
-      This is our project to improve classroom comfort & energy usage.<br><br>
-
+      This is actually our project where we’re trying to understand and improve classroom comfort 
+      (temperature, air quality, and energy usage).<br><br>
       👉 Takes less than 30 seconds<br>
       👉 No personal data collected<br><br>
-
       Thanks 🙌
     </p>
-
     <button onclick="startSurvey()">Start</button>
   </div>
 
   <!-- FORM -->
   <form id="surveyForm">
 
-    <!-- STEP TEMPLATE -->
+    <!-- ALL QUESTIONS -->
+    
+    <!-- Q1 -->
     <div class="step">
-      <h2>Air Quality 🌬️</h2>
+      <h2>1. How would you rate the air quality in your classroom/lab?</h2>
       <div class="options" data-name="entry.167936367">
-        <div class="opt">Amazing 🌿</div>
-        <div class="opt">Pretty good 👍</div>
-        <div class="opt">Meh 😐</div>
-        <div class="opt">Bad 😵</div>
+        <div class="opt">Amazing (feels like hill station 🌿)</div>
+        <div class="opt">Pretty good (survivable 👍)</div>
+        <div class="opt">Meh (it’s okay-ish 😐)</div>
+        <div class="opt">Bad (where is oxygen?? 😵)</div>
       </div>
     </div>
 
+    <!-- Q2 -->
     <div class="step">
-      <h2>Ventilation 🚪</h2>
+      <h2>2. How often does the room feel like a sealed box (no ventilation)?</h2>
       <div class="options" data-name="entry.1814503071">
-        <div class="opt">Fresh air 🌬️</div>
-        <div class="opt">Rarely bad</div>
-        <div class="opt">Sometimes 👀</div>
-        <div class="opt">Always suffocating 😭</div>
+        <div class="opt">Never (fresh air gang 🌬️)</div>
+        <div class="opt">Rarely (once in a while)</div>
+        <div class="opt">Sometimes (happens 👀)</div>
+        <div class="opt">Often (window kholo pls 😭)</div>
       </div>
     </div>
 
+    <!-- Q3 -->
     <div class="step">
-      <h2>Discomfort 🥵</h2>
+      <h2>3. Do you feel uncomfortable because of heat/smell/no airflow?</h2>
       <div class="options" data-name="entry.1512901872">
-        <div class="opt">Never 💪</div>
-        <div class="opt">Rarely</div>
-        <div class="opt">Sometimes</div>
-        <div class="opt">Frequently 😭</div>
+        <div class="opt">Never (I’m built different 💪)</div>
+        <div class="opt">Rarely (manageable)</div>
+        <div class="opt">Sometimes (yeah kinda)</div>
+        <div class="opt">Frequently (this is suffering 😭)</div>
       </div>
     </div>
 
+    <!-- Q4 -->
     <div class="step">
-      <h2>Temperature ❄️</h2>
+      <h2>4. How does the classroom temperature usually feel?</h2>
       <div class="options" data-name="entry.1106749226">
-        <div class="opt">Perfect 😌</div>
-        <div class="opt">Slightly off</div>
-        <div class="opt">Uncomfortable 😤</div>
-        <div class="opt">Terrible 😭</div>
+        <div class="opt">Perfect (finally something right 😌)</div>
+        <div class="opt">Slightly off (thoda idhar udhar)</div>
+        <div class="opt">Often uncomfortable (fix this pls 😤)</div>
+        <div class="opt">Very uncomfortable (AC hai ya decoration? 😭)</div>
       </div>
     </div>
 
+    <!-- Q5 -->
     <div class="step">
-      <h2>Main Issue ⚡</h2>
+      <h2>5. What’s your biggest problem?</h2>
       <div class="options" data-name="entry.1881675444">
-        <div class="opt">Too hot 🔥</div>
-        <div class="opt">Too cold ❄️</div>
-        <div class="opt">No airflow ⏳</div>
-        <div class="opt">No issues 😌</div>
+        <div class="opt">Too hot (classroom = tandoor 🔥)</div>
+        <div class="opt">Too cold (Antarctica vibes ❄️)</div>
+        <div class="opt">Poor airflow (air not loading... ⏳)</div>
+        <div class="opt">No issues (you’re lucky 😌)</div>
       </div>
     </div>
 
+    <!-- Q6 -->
     <div class="step">
-      <h2>Energy Waste ⚡</h2>
+      <h2>6. Do you think electricity is wasted in campus buildings?</h2>
       <div class="options" data-name="entry.1903300658">
-        <div class="opt">Never 👌</div>
-        <div class="opt">Rarely</div>
-        <div class="opt">Sometimes 👀</div>
-        <div class="opt">Often 😭</div>
+        <div class="opt">Never (perfect system 👌)</div>
+        <div class="opt">Rarely (thoda bahut chalta hai)</div>
+        <div class="opt">Sometimes (I’ve seen things 👀)</div>
+        <div class="opt">Frequently (full waste mode 😭)</div>
       </div>
     </div>
 
+    <!-- Q7 -->
     <div class="step">
-      <h2>Where Waste? 💡</h2>
+      <h2>7. When do you notice wastage the most?</h2>
       <div class="options" data-name="entry.1493350363">
-        <div class="opt">Lights ON 💡</div>
-        <div class="opt">AC running ❄️</div>
-        <div class="opt">Equipment 🖥️</div>
-        <div class="opt">Not sure 😎</div>
+        <div class="opt">Empty rooms with lights ON 💡</div>
+        <div class="opt">AC/fans running for no reason ❄️</div>
+        <div class="opt">Equipment left ON 🖥️</div>
+        <div class="opt">Not sure (I mind my business 😎)</div>
       </div>
     </div>
 
+    <!-- Q8 -->
     <div class="step">
-      <h2>Automation 🤖</h2>
+      <h2>8. Are you okay with automatic control of AC/fans?</h2>
       <div class="options" data-name="entry.274706038">
-        <div class="opt">Yes 🔥</div>
-        <div class="opt">Maybe 👀</div>
-        <div class="opt">No 💪</div>
+        <div class="opt">Yes, fully automatic (robots take over 🤖)</div>
+        <div class="opt">Yes, but I want control also (trust but verify 😌)</div>
+        <div class="opt">Not sure (depends 👀)</div>
+        <div class="opt">No (manual gang 💪)</div>
       </div>
     </div>
 
+    <!-- Q9 -->
     <div class="step">
-      <h2>Control ⚙️</h2>
+      <h2>9. What kind of control do you prefer?</h2>
       <div class="options" data-name="entry.1862869146">
-        <div class="opt">Automatic 😎</div>
-        <div class="opt">Balanced 🌍</div>
-        <div class="opt">Manual 🔧</div>
+        <div class="opt">Fully automatic (set it & forget it 😎)</div>
+        <div class="opt">Mostly automatic (best of both worlds 🌍)</div>
+        <div class="opt">Mostly manual (I like control 😤)</div>
+        <div class="opt">Fully manual (old school 🔧)</div>
       </div>
     </div>
 
+    <!-- Q10 -->
     <div class="step">
-      <h2>Empty Usage 👀</h2>
+      <h2>10. How often are classrooms empty but everything is still ON?</h2>
       <div class="options" data-name="entry.983563478">
-        <div class="opt">Never</div>
-        <div class="opt">Rarely</div>
-        <div class="opt">Sometimes</div>
-        <div class="opt">Often 😭</div>
+        <div class="opt">Never (rare sight 👀)</div>
+        <div class="opt">Rarely (sometimes happens)</div>
+        <div class="opt">Sometimes (seen it 😶)</div>
+        <div class="opt">Often (everyday story 😭)</div>
       </div>
     </div>
 
+    <!-- Q11 -->
     <div class="step">
-      <h2>Data View 📊</h2>
+      <h2>11. Would you like to see real-time air quality & energy data?</h2>
       <div class="options" data-name="entry.60962046">
-        <div class="opt">Yes 🤓</div>
-        <div class="opt">Maybe 👀</div>
-        <div class="opt">No 😐</div>
+        <div class="opt">Yes (I love data 🤓)</div>
+        <div class="opt">Maybe (if it’s interesting 👀)</div>
+        <div class="opt">Not really (meh)</div>
+        <div class="opt">No (don’t want stress 😌)</div>
       </div>
     </div>
 
+    <!-- Q12 -->
     <div class="step">
-      <h2>Preference 💡</h2>
+      <h2>12. What would you prefer?</h2>
       <div class="options" data-name="entry.346856527">
-        <div class="opt">Comfort 💸</div>
-        <div class="opt">Balanced ⚖️</div>
-        <div class="opt">Saving 🌍</div>
+        <div class="opt">Maximum comfort (bill baad mein dekhenge 💸)</div>
+        <div class="opt">Balance of comfort & saving (smart choice 😎)</div>
+        <div class="opt">Maximum saving (adjust kar lenge 🌍)</div>
+        <div class="opt">No preference (jo hoga dekha jayega 😌)</div>
       </div>
     </div>
 
+    <!-- NAV -->
     <div class="nav">
       <button type="button" onclick="prevStep()">Back</button>
       <button type="button" onclick="nextStep()">Next</button>
